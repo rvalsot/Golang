@@ -1,11 +1,13 @@
 # Golang
 
+## Sources
+
 This file are notes from the Tod McLeod's Udemy Course on Go: [Learn How To Code: Google's Go](https://www.udemy.com/learn-how-to-code/learn/v4/overview) also, additional research to improve my knowledge of the language.
 
 Tod's McLeod contact:
 * [Github Page](https://github.com/GoesToEleven)
 
-## Installing Go
+## $\checkmark$ Installing Go
 
 In Ubuntu, installation and Go Path setting:
 ``` shell
@@ -104,6 +106,37 @@ To remember:
 
 ## Variables
 
+$\checkmark$ __Blank identifier__
+
+Represented by the underscore character: `_`, is a special identifier you can assign anything you want, but never read from. It has some special uses in declarations, as and operand, and in assignments.
+
+__Constants__
+
+_A constant is a simple, unchanging value_, it is identified by the keyword `const` and can be declared individually or in block:
+
+``` go
+const p string = "This is a constant!"
+const (
+  a = 1992
+  b = "Constant B"
+)
+```
+
+The Iotas are auto-incremented assign values that can be used in constant blocks declaration with theeir keyword `iota`.
+``` go
+const (
+  a = iota  // a = 0
+  b = iota  // b = 1, and so on
+)
+```
+Whenever `const` keyword appears, Iota count is reset to `0`.
+
+### Types
+
+__Constants types__
+Typed vs Untyped declarations
+
+
 __Primitive types__
 
 | Group | Types |
@@ -119,17 +152,20 @@ __Primitive types__
 
 __Compound Types__
 
-__Scope__
+$\checkmark -$ __Scope__
 
 By ascendant order:
 * Block: is available within curly braces, like inside a function. Within each block, precedence matters in being available.
-* File
+* File: the scope of a package name of an imported package is the file block of the file containing the import declaration.
 * Package: is done directly on _package level_ outside of a `main()` or any function.
-* Universe
+* Universe: the scope of a predeclared identifier is the _Universe block_.
 
 __Initialization__
 
 There are a bunch of ways to initialize your variables:
+
+## Memory 
+
 
 
 ## Functions
