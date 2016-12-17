@@ -7,7 +7,7 @@ This file are notes from the Tod McLeod's Udemy Course on Go: [Learn How To Code
 Tod's McLeod contact:
 * [Github Page](https://github.com/GoesToEleven)
 
-## $\checkmark$ Installing Go
+## $\checkmark$ Installation
 
 In Ubuntu, installation and Go Path setting:
 ``` shell
@@ -48,7 +48,7 @@ To add packages from the community, additional to our Standard Library, run in t
 $ go get name_of_the_package
 ```
 
-### Go Command Line
+## Go Command Line
 
 | Command | Short Description |
 | ------- | ----------------- |
@@ -93,7 +93,7 @@ If the argument is a list of files, go treats them as a single package.
     * Puts the package in `$GOPATH/pkg`
     * Makes it an archive file
 
-__Go Documentation__
+## Go Documentation
 
 [List of Documentation sites]
 
@@ -131,12 +131,6 @@ const (
 ```
 Whenever `const` keyword appears, Iota count is reset to `0`.
 
-### Types
-
-__Constants types__
-Typed vs Untyped declarations
-
-
 __Primitive types__
 
 | Group | Types |
@@ -149,6 +143,10 @@ __Primitive types__
 | Complex | `complex64`. `complex128` |
 | Pointer |
 | Others  |
+
+__Runes__
+
+They are the integer values identifying and Unicode code point, they're expressed in between single quotes.
 
 __Compound Types__
 
@@ -164,9 +162,84 @@ __Initialization__
 
 There are a bunch of ways to initialize your variables:
 
-## Memory 
+## Memory
 
+__Pointers__
 
+``` go
+a := 2
+var b *int = &a
+```
+Here, the pointer `b` is directed to the integer `a` address'.
+
+## Flow Control
+
+__For Loop__
+
+The `for` loop in Go has several behaviors, accomplishes for, while, for-each and do-while like actions from other languages:
+``` go
+for init; condition; post {
+  // this is a common C-like for
+}
+
+for i < 10 {
+  i++ // This will be the equivalent of while in C languages, just need a Boolean condition!
+}
+
+for key, value := range aMap {
+  // This is a for-each, to iterate in an: array, slice, string or map, or reading a channel
+}
+
+for key := range anArray {
+  // this is similar to previous for, but will only iterate the first element of the range
+}
+
+for _, value := range aRange {
+  // Similar to both previous, will drop the first element and go for the second, with the blank identifier
+}
+
+for {
+  // This for will run indefinitely, like the C for(;;)
+  continue // This will begin the next iteration of the loop
+  break // This statement can halt the execution and exit the loop
+}
+```
+
+__Switch__
+
+There are several versions of the `switch` statement, the standard one is:
+``` go
+switch expression {
+  case condition:
+    // Do something
+  default: the_default
+    // Do else
+}
+```
+There's also an empty switch that will execute the commands that first (and just this) return `true` value:
+``` go
+switch {
+  case false:
+    // This will not execute
+  case true:
+    // This will execute
+  default:
+    // If previous were false, this will run   
+}
+```
+
+__If blocs__
+
+We have three forms:
+* Simple `if`
+* Compound `if`, `else`
+* Compound `if`, `else if`, `else`
+
+``` go
+if condition {
+  // Do something, this is a simple if, will execute if "condition" is true 
+}
+```
 
 ## Functions
 
@@ -185,6 +258,12 @@ func main () {
 
 What can you return:
 * Another function
+
+__Notes__
+
+* Everything in Go is passed by copy.
+
+
 
 ## Creating a First Project
 
