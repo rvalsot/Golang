@@ -21,4 +21,12 @@ func main() {
 		fmt.Println("Your food is cheesecake")
 	}
 
+	if false {
+		fmt.Println("This is the if statement")
+	} else if true {
+		fmt.Println("This is the else-if statement")
+	} else {
+		fmt.Println("This is the else statement")
+	}
+
 }

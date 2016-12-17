@@ -162,6 +162,8 @@ __Initialization__
 
 There are a bunch of ways to initialize your variables:
 
+__Zero values__
+
 ## Memory
 
 __Pointers__
@@ -237,13 +239,30 @@ We have three forms:
 
 ``` go
 if condition {
-  // Do something, this is a simple if, will execute if "condition" is true 
+  // Do something, this is a simple if, will execute if "condition" is true
 }
+
+if initialize; condition {
+  // Will initialize something before the expression is evaluated.
+}
+```
+
+The composite versions would be:
+``` go
+if condition {
+  // Do a-stuff
+} else if condition {
+  // Do b-stuff
+} else {
+  // do the last-resort stuff
+}
+
 ```
 
 ## Functions
 
-Anonymous functions or _func expressions_, assigned to a variable, without giving it a proper name.
+__Anonymous functions__
+Also called _func expressions_, assigned to a variable, without giving it a proper name.
 
 ``` go
 package main
@@ -255,30 +274,92 @@ func main () {
   }
 }
 ```
+They are used whenever we want to have a function declaration inside another, like inside our `main()`.
 
+__Function Expressions__
+
+Are functions that can be assigned to a variable and whose return type is another function and its own type:
+
+``` go
+function myFunction() func int(){
+  return func () int {
+    x++
+    return x
+  }
+}
+
+myVariable := myFunction()
+```
+
+__Functions Proper__
+
+The basic structure of a function in go is:
+``` go
+func function_name (parameter type, param2 type) (returnType, otherReturnType) {
+  // does something
+  return something
+}
+```
+Where:
+* First, we declare the function name
+* After that, we list the input parameters followed by their type and separated by commas, a series of parameters of the same type can be listed and just one type added at the end.
+* The third part is the return: we can name it or not, but we need to specify the return type always; if there are more than one returned value, we must list them between parenthesis.
+
+__Variadic Functions__
+
+Are functions that can take from zero to an unspecified number or arguments of the same type, they are declared this way:
+``` go
+func myFunction (name ...type) returnType {
+  // Does some stuff
+}
+```
+
+Remember that passing a group of arguments it's not the same that passing a slice!
+
+__Callback functions__
+
+Callbacks allow us to pass functions as an argument:
+``` go
+func baseFunction(parameters type, callback func(type)) baseFunctionReturnType {
+  callback(argument)
+  return something
+}
+// We use it, lets say:
+baseFunction(our_arguments, func(callback_payload) {
+  fmt.Println(callback_payload)
+})
+
+```
+
+__Return Values__
 What can you return:
 * Another function
+
+Named returns do not need to `return` keyword to be followed by the variable, just the last being assigned somewhere in the function body:
+``` go
+func aFunction (parm type) (returnedValue type) {
+  returnedValue := something //
+  return
+}
+```
+
+You can assign the return value to a variable in the context is being used:
+``` go
+myVariable := myFunction(arguments)
+```
+
+__Recursion__
+
+Go supports Recursion, simply put it in the return!
+``` go
+func factorial(x int) int {
+  if x == 0 {
+    return 1
+  }
+  return x * factorial(x-1)
+}
+```
 
 __Notes__
 
 * Everything in Go is passed by copy.
-
-
-
-## Creating a First Project
-
-Suggested to do by McLeod:
-* Create below `src/project_name/`
-* Folder & Package name should correspond.
-* Packages are given, by convention, lower-case and single word names.
-
-## Resources
-
-Extra web pages providing useful stuff.
-
-* [Ardan Labs](https://www.ardanlabs.com/) $\leftarrow$ good challenges.
-* [Fedora installation](https://developer.fedoraproject.org/tech/languages/go/go-installation.html)
-* [Scope](https://golang.org/ref/spec#Declarations_and_scope)
-* [Ubuntu installation](https://github.com/golang/go/wiki/Ubuntu)
-
-## Miscellany
