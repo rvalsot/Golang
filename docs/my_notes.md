@@ -150,6 +150,8 @@ They are the integer values identifying and Unicode code point, they're expresse
 
 __Compound Types__
 
+*Or reference types?*
+
 $\checkmark -$ __Scope__
 
 By ascendant order:
@@ -259,6 +261,27 @@ if condition {
 
 ```
 
+__Defer Statement__
+
+The `defer` statement preceding a function, halts its execution to be ran immediately before the function execution the defer returns; if there are several defer, they will execute in regressive order:
+``` go
+func main () {
+    defer fmt.Println("1")
+    defer fmt.Println("2")
+    fmt.Println("3")
+}
+// This will print out:
+3
+2
+1
+```
+
+__Boolean Expressions__
+
+* Logical Not `!`
+* Logical And `&&`
+* Logical Or  `||`
+
 ## Functions
 
 __Anonymous functions__
@@ -275,6 +298,13 @@ func main () {
 }
 ```
 They are used whenever we want to have a function declaration inside another, like inside our `main()`.
+
+Self executing, Anonymous Functions are not declared nor named:
+``` go
+func () {
+  // Do something
+} () // This parenthesis will run the function
+```
 
 __Function Expressions__
 
@@ -331,6 +361,12 @@ baseFunction(our_arguments, func(callback_payload) {
 
 ```
 
+__Pass by value__
+
+Sending the address of a variable
+
+Strings are immutable.
+
 __Return Values__
 What can you return:
 * Another function
@@ -363,3 +399,11 @@ func factorial(x int) int {
 __Notes__
 
 * Everything in Go is passed by copy.
+
+
+## Resources and Miscellany
+
+* [Ardan Labs](https://www.ardanlabs.com/) $\leftarrow$ good challenges.
+* [Fedora installation](https://developer.fedoraproject.org/tech/languages/go/go-installation.html)
+* [Scope](https://golang.org/ref/spec#Declarations_and_scope)
+* [Ubuntu installation](https://github.com/golang/go/wiki/Ubuntu)
