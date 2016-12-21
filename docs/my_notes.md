@@ -166,6 +166,35 @@ There are a bunch of ways to initialize your variables:
 
 __Zero values__
 
+### Data Structures
+
+* Array
+* Slice
+* Map
+* Struct
+
+__Common Stuff__
+
+* `len()`
+* Length / Capacity difference:
+
+__Operations__
+
+__Arrays__
+
+The length of the array is part of its type.
+They're linear, but can be composed of multidimensional stuff.
+
+``` go
+myArray := [size]type
+```
+
+__Slices__
+
+``` go
+mySlice := []type
+```
+
 ## Memory
 
 __Pointers__
