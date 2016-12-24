@@ -166,7 +166,9 @@ There are a bunch of ways to initialize your variables:
 
 __Zero values__
 
-### Data Structures
+### Data Structures (Reference type)
+
+Are constructs of an underlying data type
 
 * Array
 * Slice
@@ -175,7 +177,11 @@ __Zero values__
 
 __Common Stuff__
 
-* `len()`
+* `append(a, b, c...)`, will paste the elements, you can paste slices, for example
+  * Appending the same slice, but skipping a given index will delete it.
+* `cap(a)`, will show you the capacity of the structure
+* `len(a)`, will give you the
+* `make(a, n, m)`,  can be used to create channels, maps, and slices
 * Length / Capacity difference:
 
 __Operations__
@@ -191,9 +197,42 @@ myArray := [size]type
 
 __Slices__
 
+[# Definition]
+
+Declaration and access
+
 ``` go
-mySlice := []type
+
+// Declaration
+var mySlice []type                  // var style
+mySlice := []type{}                 // short style
+mySlice := make([]type], len, cap)  // make style
+
+multidimensionalSlice := [][]type{}         // short style
+multidimensionalSlice := make([][]type, 0)  // make style
+
+// Filling
+mySlice = append(mySlice, someStuff)
+mySlice[i] = someStuff
+
+// Access to elements
+mySlice[n]                  // will access n + 1 element
+multidimensionalSlice[n]    // will access the n + 1 dimension
+multidimensionalSlice[n][m] // will access the n +1, m + 1 element
 ```
+
+To remember:
+
+* A slice done using `make` will duplicate its capacity if overflown.
+* Just when using `make`, we can assign by index, if not, gotta use `append` to add stuff to our slices.
+* Using `make(name, n)`, will give it the same length and capacity.
+* You can increment by index: `mySlice[i]++` an element.
+
+__Maps__
+
+Are Key-Value storages.
+
+Their uninitialized value is `nil`.
 
 ## Memory
 
