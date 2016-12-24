@@ -234,6 +234,19 @@ Are Key-Value storages.
 
 Their uninitialized value is `nil`.
 
+``` go
+var myMap = make(map[key_type]value_type)     //
+var myMap = map[key_type]value_type{
+  key:value,
+  key2:value2,
+}                                            //
+
+```
+Checking existance
+``` 
+[c96 exists if ]
+```
+
 ## Memory
 
 __Pointers__
