@@ -45,7 +45,14 @@ It is composed by a folder at `$GOPATH`, containing sub directories:
     * Folder `project_b` repository
     * Folder `package_a` repository, ... etc.
 
-This structure allows you easy package managing & _namespacing_
+This structure allows you easy package managing & _namespacing_.
+
+__Import Paths__
+
+Import paths are unique identifiers for our packages origin. If having a Github account, it is recommended:
+``` sh
+$ mkdir -p $GOPATH/src/github.com/you/package_name
+```
 
 To add libre packages from the community, additional to our Standard Library, run in terminal:
 
@@ -53,12 +60,6 @@ To add libre packages from the community, additional to our Standard Library, ru
 $ go get name_of_the_package
 ```
 
-__Import Paths__
-
-Are unique identifiers for our packages origin. If having a Github account, it is recommended:
-``` sh
-$ mkdir -p $GOPATH/src/github.com/you/package_name
-```
 
 __Package Installation__
 
@@ -93,13 +94,13 @@ We build it at Terminal, if something is wrong, build will be halted and we noti
 $ go build path_to_folder/your_package
 ```
 
-After that, we can call our package using `import "path_to_folder/your_package"` in our go scripts, as any other Standard Library.
+After that, we can call our package using `import "path_to_folder/your_package"` in our scripts, as any other Standard Library.
 
 Remember:
-* Documentation if highly enforced above each of our functions.
-* Scoping is given by casing in the packages
+* Documentation if highly enforced as comments above each of our functions;
+* Scoping is given by casing in the packages;
 
-__Notes__:
+### Notes:
 * `GOPATH` must not be the same location of your installation.
 
 
@@ -124,7 +125,7 @@ __Notes__:
 | `go vet`      | Run Go tool vet on packages |
 
 
-__The Big Three for Go Terminal__ 
+__The Big Three for Go Terminal__
 `go run`
 
 Needs a file name as input, i.e.: `go run my_main.go`, will report errors, if they exists.
@@ -308,7 +309,72 @@ To remember:
 
 __Hash Tables__
 
+[Gotta Put something here]
 
+__Struct__
+
+Are user-defined, composite types, created this way:
+``` go
+type name struct {
+  field   type
+  field2  type // ... and so on...
+}
+```
+Field names must be unique and be explicitly or implicitly defined.
+
+``` go
+variable := myStruct{1,2,"a",true, inherited_struct}      // Short declaration
+variable := myStruct{
+  field_i : 1,
+  field_i : 2,
+  field_s : "a",
+  field_b : true,
+  inherited_struct : inherited_struct {
+    field_o : "o"
+  }
+}
+```
+To know:
+* Structs get subjected to the same Export / Not behavior than functions.
+* You can attach methods to a type.
+* There's inheritance of fields.
+* Remember with inheritance: _The Outer type overwrites the Inner type_
+
+Inherited stuff:
+``` go
+type provider {
+  field type // ... and so on
+}
+
+type receiver {
+  provider
+  field type // and so on
+}
+newProvider := prodiver{quality}
+newReceiver := receiver{newProvider, quality2} // or
+newReceiver := receiver{provider:provider{}, quality2}
+```
+
+Tags:
+
+__Struct Methods__
+
+Are declared a almost normal functions:
+
+``` go
+func (a struct) MethodName() type {
+  // do something
+}
+```
+Any value of the type `struct` can use the `MethodName` as proper.
+
+__Interfaces__
+
+They are the Go response to polymorphism: the ability to write code that can take on different behavior through the implementation of types.
+
+Interfaces are types that just declare behavior. They're implemented by user-defined types via Methods.
+
+They have not
 
 ## Memory
 
