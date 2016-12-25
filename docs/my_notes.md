@@ -7,9 +7,13 @@ This file are notes from the Tod McLeod's Udemy Course on Go: [Learn How To Code
 Tod's McLeod contact:
 * [Github Page](https://github.com/GoesToEleven)
 
-## ✓ Installation
+## ✓ Installation and Workspace
 
-In Ubuntu, installation and Go Path setting:
+__Installation__
+
+Download from source with terminal and set the `$GOPATH` environment variable that will locate your workspace.
+
+In Ubuntu:
 ``` shell
 $ sudo apt-get update -y
 $ sudo apt-get install -y golang
@@ -18,7 +22,7 @@ $ echo 'export GOROOT=/usr/local/go' >> ~/.bashrc
 $ echo 'export GOPATH=/$HOME/go' >> ~/.bashrc
 $ echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin' >> ~/.bashrc
 ```
-While in Fedora, installation & path:
+While in Fedora:
 ``` sh
 $ sudo dnf update -y
 $ sudo dnf install -y go
@@ -32,21 +36,72 @@ Run in terminal `go env` to check `$GOPATH` is correctly set.
 
 __Go Workspace__
 
-It is composed by any folder (preferred to be just one) containing:
-`Workspace`
-* `bin` :
-* `pkg` :
-* `src` :
+It is composed by a folder at `$GOPATH`, containing sub directories:
+` Workspace/`
+* `/bin` : executable commands;
+* `/pkg` : package objects;
+* `/src` : Go source files;
     * Folder `project_a` repository
-    * Folder `project_b` repository, ... etc.
+    * Folder `project_b` repository
+    * Folder `package_a` repository, ... etc.
 
 This structure allows you easy package managing & _namespacing_
 
-To add packages from the community, additional to our Standard Library, run in terminal:
+To add libre packages from the community, additional to our Standard Library, run in terminal:
 
 ``` sh
 $ go get name_of_the_package
 ```
+
+__Import Paths__
+
+Are unique identifiers for our packages origin. If having a Github account, it is recommended:
+``` sh
+$ mkdir -p $GOPATH/src/github.com/you/package_name
+```
+
+__Package Installation__
+
+You can install code at your `/src` directory by using:
+``` sh
+$ go install /src/path_to_folder/your_package
+```
+
+Or by executing the `go install` command while in the directory.
+
+After that, you can run the code at Terminal with:
+``` sh
+$ $GOPATH/bin/your_package
+```
+
+__Making a Library__
+
+First, create your package stuff as normal Go files.
+
+``` go
+package your_package
+
+// YourFunction does something ←this is your documentation
+func YourFunction {
+  // Do something
+}
+```
+
+We build it at Terminal, if something is wrong, build will be halted and we notified.
+
+``` sh
+$ go build path_to_folder/your_package
+```
+
+After that, we can call our package using `import "path_to_folder/your_package"` in our go scripts, as any other Standard Library.
+
+Remember:
+* Documentation if highly enforced above each of our functions.
+* Scoping is given by casing in the packages
+
+__Notes__:
+* `GOPATH` must not be the same location of your installation.
+
 
 ## Go Command Line
 
@@ -68,6 +123,8 @@ $ go get name_of_the_package
 | `go version`  | Prints your current Go version |
 | `go vet`      | Run Go tool vet on packages |
 
+
+__The Big Three for Go Terminal__ 
 `go run`
 
 Needs a file name as input, i.e.: `go run my_main.go`, will report errors, if they exists.
