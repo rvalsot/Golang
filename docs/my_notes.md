@@ -7,7 +7,7 @@ This file are notes from the Tod McLeod's Udemy Course on Go: [Learn How To Code
 Tod's McLeod contact:
 * [Github Page](https://github.com/GoesToEleven)
 
-## $\checkmark$ Installation
+## ✓ Installation
 
 In Ubuntu, installation and Go Path setting:
 ``` shell
@@ -106,7 +106,7 @@ To remember:
 
 ## Variables
 
-$\checkmark$ __Blank identifier__
+✓ __Blank identifier__
 
 Represented by the underscore character: `_`, is a special identifier you can assign anything you want, but never read from. It has some special uses in declarations, as and operand, and in assignments.
 
@@ -152,7 +152,7 @@ __Compound Types__
 
 *Or reference types?*
 
-$\checkmark -$ __Scope__
+✓ __Scope__
 
 By ascendant order:
 * Block: is available within curly braces, like inside a function. Within each block, precedence matters in being available.
@@ -230,9 +230,7 @@ To remember:
 
 __Maps__
 
-Are Key-Value storages.
-
-Their uninitialized value is `nil`.
+Are Key-Value storages; an unordered group of elements of one type, called _element type_, indexed by a set of _unique_ keys of another type, called _key type_. Their uninitialized value is `nil`.
 
 ``` go
 var myMap = make(map[key_type]value_type)     //
@@ -243,9 +241,17 @@ var myMap = map[key_type]value_type{
 
 ```
 Checking existance
-``` 
+```
 [c96 exists if ]
 ```
+
+To remember:
+* You can have maps of maps.
+* Using `make` to create a map, you can set an approximate length
+
+__Hash Tables__
+
+
 
 ## Memory
 
@@ -484,7 +490,9 @@ __Notes__
 
 ## Resources and Miscellany
 
-* [Ardan Labs](https://www.ardanlabs.com/) $\leftarrow$ good challenges.
+* [Ardan Labs](https://www.ardanlabs.com/) ← good challenges.
 * [Fedora installation](https://developer.fedoraproject.org/tech/languages/go/go-installation.html)
+* [Going Go](https://www.goinggo.net/)
+* [Golang Book](https://www.golang-book.com/books/intro) ← The gopher in the bike.
 * [Scope](https://golang.org/ref/spec#Declarations_and_scope)
 * [Ubuntu installation](https://github.com/golang/go/wiki/Ubuntu)
