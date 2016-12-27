@@ -376,6 +376,11 @@ Interfaces are types that just declare behavior. They're implemented by user-def
 
 They have not
 
+[Empty Interfaces <- Everything implements them]
+(Pointer receivers)
+
+[Method Sets]
+
 ## Memory
 
 __Pointers__
@@ -494,6 +499,18 @@ __Boolean Expressions__
 
 ## Functions
 
+| Receiver | Values |
+| -------- | ------ |
+| `(t T)`  | `T` and `*T` |
+| `(t *T)` | `*T` |
+
+| Values | Receivers |
+| ------ | --------- |
+| `T`    | `(t T)`   |
+| `*T`   | `(t T)` and `(t *T)` |
+
+
+
 __Anonymous functions__
 Also called _func expressions_, assigned to a variable, without giving it a proper name.
 
@@ -610,6 +627,19 @@ __Notes__
 
 * Everything in Go is passed by copy.
 
+
+## Concurrency
+
+Keyword `go`
+
+
+> Concurrency is the composition of independently executing processes, while parallelism is the simultaneous execution of, possibly related, computations. First is about dealing with lots of things at once; Second about doing lots of things at once.
+
+To avoid Concurrency overwriting
+
+[WaitGroups]
+[Atomicity -> sync package]
+[Mutex -> mutex package]
 
 ## Resources and Miscellany
 
