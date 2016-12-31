@@ -391,6 +391,10 @@ var b *int = &a
 ```
 Here, the pointer `b` is directed to the integer `a` address'.
 
+## Channels
+
+
+
 ## Flow Control
 
 __For Loop__
@@ -630,10 +634,14 @@ __Notes__
 
 ## Concurrency
 
-Keyword `go`
-
-
 > Concurrency is the composition of independently executing processes, while parallelism is the simultaneous execution of, possibly related, computations. First is about dealing with lots of things at once; Second about doing lots of things at once.
+
+To split our programs and use concurrency, Go provides us of Goroutines and Channels.
+
+__Goroutines__
+Are capable of running concurrently with other functions, they're created with the keyword `go`.
+
+A
 
 To avoid Concurrency overwriting
 
