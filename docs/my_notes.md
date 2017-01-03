@@ -393,7 +393,22 @@ Here, the pointer `b` is directed to the integer `a` address'.
 
 ## Channels
 
+There are two types:
+* Buffered:
+* Unbuffered:
 
+Their declaration is as follows:
+``` go
+myChannel := make(chan type)            // Unbuffered
+myChannel := make(chan type, size)      // Buffered
+```
+
+Channel Closing
+With function `channel(myChannel)`
+
+Many functions writing to one Channels or one Channel being pulled to many Functions.
+
+ Channel Direction and the `<-` operator.
 
 ## Flow Control
 
