@@ -391,24 +391,7 @@ var b *int = &a
 ```
 Here, the pointer `b` is directed to the integer `a` address'.
 
-## Channels
 
-There are two types:
-* Buffered:
-* Unbuffered:
-
-Their declaration is as follows:
-``` go
-myChannel := make(chan type)            // Unbuffered
-myChannel := make(chan type, size)      // Buffered
-```
-
-Channel Closing
-With function `channel(myChannel)`
-
-Many functions writing to one Channels or one Channel being pulled to many Functions.
-
- Channel Direction and the `<-` operator.
 
 ## Flow Control
 
@@ -663,12 +646,34 @@ To avoid Concurrency overwriting
 [WaitGroups]
 [Atomicity -> sync package]
 [Mutex -> mutex package]
+[Race conditions / Deadlock] [Race condition: different go routines trying to access the same variable and mixing up ] [Deadlock: when we have difference in the relay and there's never a meeting between channels]
+
+__Channels__
+
+There are two types:
+* Buffered:
+* Unbuffered:
+
+Their declaration is as follows:
+``` go
+myChannel := make(chan type)            // Unbuffered
+myChannel := make(chan type, size)      // Buffered
+```
+
+Channel Closing
+With function `channel(myChannel)`
+
+Many functions writing to one Channels or one Channel being pulled to many Functions.
+
+ Channel Direction and the `<-` operator.
+
+{Relay, range, Deadlock}
 
 ## Resources and Miscellany
 
 * [Ardan Labs](https://www.ardanlabs.com/) ← good challenges.
 * [Fedora installation](https://developer.fedoraproject.org/tech/languages/go/go-installation.html)
 * [Going Go](https://www.goinggo.net/)
-* [Golang Book](https://www.golang-book.com/books/intro) ← The gopher in the bike.
+* [Golang Book](https://www.golang-book.com/books/intro) ← The go pher in the bike.
 * [Scope](https://golang.org/ref/spec#Declarations_and_scope)
 * [Ubuntu installation](https://github.com/golang/go/wiki/Ubuntu)
