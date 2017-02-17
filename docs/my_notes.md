@@ -611,7 +611,7 @@ func aFunction (parm type) (returnedValue type) {
 You can assign the return value to a variable in the context is being used:
 ``` go
 myVariable := myFunction(arguments)
-```
+```apt
 
 __Recursion__
 
@@ -668,6 +668,10 @@ Many functions writing to one Channels or one Channel being pulled to many Funct
  Channel Direction and the `<-` operator.
 
 {Relay, range, Deadlock}
+
+## Error Handling
+
+
 
 ## Resources and Miscellany
 
