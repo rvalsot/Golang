@@ -25,7 +25,7 @@ func (t *templateHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 
-	http.Handle("/", &templateHandler{filename: "chat.html"})
+	http.Handle("/", &templateHandler{filename: "farm.html"})
 
 	if err := http.ListenAndServe(":3000", nil); err != nil {
 		log.Fatal("ListenAndServe Fail:", err)

@@ -16,15 +16,26 @@ Chat Application with Web Sockets
 
 Credits goes to: https://github.com/matryer/goblueprints/tree/master/chapter1/chat
 
+## Brotips, notes, etc.
 
+* __Channels__: you can think them as in-memory and thread-safe message queue, where users pass and receive data  in a non-blocking thread-safe way.
+
+## Used functions of the Standard Library
 * `net/http`
-  * `HandleFunc`
-  * `ListenAndServe`
+  * `HandleFunc`:
+  * `ListenAndServe`:
 * `path/filepath`
-  * `Join`
+  * `Join`:
 * `sync`
-  * `Once`
+  * `Once`:
 * `template`
-  * `ParseFiles`
-  * `Template`
-    * `Execute`
+  * `ParseFiles`:
+  * `Template`:
+    * `Execute`:
+## Other Libraries
+
+* Gorilla
+  * `socket`:
+    * `Close`:
+    * `ReadMessage`:
+    * `WriteMessage`
