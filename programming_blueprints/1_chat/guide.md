@@ -21,21 +21,28 @@ Credits goes to: https://github.com/matryer/goblueprints/tree/master/chapter1/ch
 * __Channels__: you can think them as in-memory and thread-safe message queue, where users pass and receive data  in a non-blocking thread-safe way.
 
 ## Used functions of the Standard Library
-* `net/http`
+* `net/http`:
   * `HandleFunc`:
   * `ListenAndServe`:
-* `path/filepath`
+  * `ResponseWriter`:
+  * `Request`:
+* `path/filepath`:
   * `Join`:
-* `sync`
+* `sync`:
   * `Once`:
 * `template`
   * `ParseFiles`:
   * `Template`:
     * `Execute`:
+* `delete(map[typeA]typeB, typeA)`:
+* `close(chan)`:
+
+
 ## Other Libraries
 
 * Gorilla
   * `socket`:
     * `Close`:
     * `ReadMessage`:
-    * `WriteMessage`
+    * `Upgrader`:
+    * `WriteMessage`:

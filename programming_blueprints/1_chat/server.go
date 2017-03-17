@@ -25,9 +25,24 @@ func (t *templateHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 
-	http.Handle("/", &templateHandler{filename: "farm.html"})
+	myRoom := newRoom()
 
-	if err := http.ListenAndServe(":3000", nil); err != nil {
-		log.Fatal("ListenAndServe Fail:", err)
+	http.Handle("/", &templateHandler{filename: "chat.html"})
+	http.Handle("/room", myRoom)
+
+	// get the room going
+	go myRoom.run()
+
+	// start the web server
+	if err := http.ListenAndServe(":8080", nil); err != nil {
+		log.Fatal("ListenAndServe broken:", err)
 	}
+
+	//
+	//
+	// http.Handle("/", &templateHandler{filename: "farm.html"})
+	//
+	// if err := http.ListenAndServe(":3000", nil); err != nil {
+	// 	log.Fatal("ListenAndServe Fail:", err)
+	// }
 }
