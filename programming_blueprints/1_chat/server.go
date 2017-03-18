@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"log"
 	"net/http"
 	"path/filepath"
@@ -23,7 +24,12 @@ func (t *templateHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	t.templ.Execute(w, nil)
 }
 
+// ____________________________________________________________________________
+
 func main() {
+
+	var address = flag.String("address", ":8080", "The address of our web application.")
+	flag.Parse() // Parsing of the flag
 
 	myRoom := newRoom()
 
@@ -34,15 +40,9 @@ func main() {
 	go myRoom.run()
 
 	// start the web server
-	if err := http.ListenAndServe(":8080", nil); err != nil {
+	log.Println("Starting web service at: ", *address)
+	if err := http.ListenAndServe(*address, nil); err != nil {
 		log.Fatal("ListenAndServe broken:", err)
 	}
 
-	//
-	//
-	// http.Handle("/", &templateHandler{filename: "farm.html"})
-	//
-	// if err := http.ListenAndServe(":3000", nil); err != nil {
-	// 	log.Fatal("ListenAndServe Fail:", err)
-	// }
 }
