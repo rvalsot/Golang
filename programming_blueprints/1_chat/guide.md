@@ -28,6 +28,7 @@ Credits goes to: https://github.com/matryer/goblueprints/tree/master/chapter1/ch
   * `Println`:
 * `net/http`:
   * `HandleFunc`:
+  * `Handler`:
   * `ListenAndServe`:
   * `ResponseWriter`:
   * `Request`:
