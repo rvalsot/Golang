@@ -1,9 +1,9 @@
-package main 
+package main
 
 import "fmt"
 
 func main() {
-	var number int = 3
+	number := 3
 
-	fmt.Println("A cow number ", number)
+	fmt.Println("Hellow cow number ", number)
 }
