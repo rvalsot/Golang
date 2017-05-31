@@ -42,7 +42,7 @@ type pentagon struct {
 // Areas ----------------------------------------------------------------------
 
 func (s square) area() float64 {
-	area := math.Pow(2, s.SideLength)
+	area := math.Pow(s.SideLength, 2)
 	return area
 }
 func (c circle) area() float64 {
@@ -71,7 +71,7 @@ func (c circle) perimeter() float64 {
 }
 
 func (r rhombus) perimeter() float64 {
-	sideLength := math.Sqrt(math.Pow(2, r.MayorDiagonalLength) + math.Pow(2, r.MinorDiagonalLength))
+	sideLength := math.Sqrt(math.Pow(r.MayorDiagonalLength, 2) + math.Pow(r.MinorDiagonalLength, 2))
 	RhombusPerimeter := sideLength * 4
 	return RhombusPerimeter
 }
@@ -84,12 +84,12 @@ func (p pentagon) perimeter() float64 {
 // Interface ------------------------------------------------------------------
 
 type geometricFigure interface {
-	area()
-	perimeter()
+	area() float64
+	perimeter() float64
 }
 
 func showArea(g geometricFigure) {
-	g.area()
+	fmt.Print(g.area(), "\n")
 }
 
 func showPerimter(g geometricFigure) {
@@ -97,15 +97,24 @@ func showPerimter(g geometricFigure) {
 }
 
 // Main -----------------------------------------------------------------------
-
+/* Activate to use
 func main() {
-	fmt.Println("Welcome to geoemtric calculator")
+	fmt.Println("Welcome to geometric calculator")
 
 	cuadrito := square{
 		"cuadrito",
 		5,
 	}
 
-	fmt.Println(showArea(cuadrito))
+	rombito := rhombus{
+		"rombito",
+		5,
+		4,
+	}
+
+	fmt.Print("The area of ", cuadrito.Name, " is ")
+	showArea(cuadrito)
+	showPerimter(rombito)
 
 }
+*/
