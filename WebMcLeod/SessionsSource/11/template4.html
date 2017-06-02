@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title> Template for structs </title>
+</head>
+
+<body>
+  <h1>Template for structs</h1>
+  <ul>
+    {{range .}}
+    {{$name := .Name}}
+    {{$chocolate := .Chocolate}}
+    <li> {{$name}}, chocolate? {{$chocolate}} </li>
+    {{end}}
+  </ul>
+
+</body>
+
+</html>

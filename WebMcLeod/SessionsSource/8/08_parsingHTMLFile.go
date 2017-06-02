@@ -10,7 +10,7 @@ import (
 func main() {
 	fmt.Println("File 08 Parsing HTML Go Source into a file")
 
-	filename := "08_base.gohtml"
+	filename := "08_base." + "gohtml"
 
 	// Get the file contents into the template
 	templ, err := template.ParseFiles(filename)

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title> Template for structs </title>
+</head>
+
+<body>
+  <h1>Template for struct slice struct</h1>
+
+  <h2> Houses </h2>
+
+  <table>
+    <tr>
+      <th> Address </th>
+      <th> Area </th>
+      <th> Rooms </th>
+    </tr>
+    {{range .Houses}}
+    <tr>
+      <td> {{.Address}} </td>
+      <td> {{.Area}} </td>
+      <td> {{.Rooms}} </td>
+    </tr>
+    {{end}}
+  </table>
+
+  <h2> Apartment Buildings </h2>
+  <table>
+    <tr>
+      <th> Address </th>
+      <th> Aparments </th>
+      <th> Levels </th>
+    </tr>
+    {{range .ApartmentBuildings}}
+    <tr>
+      <td> {{.Address}} </td>
+      <td> {{.ApartmentsNumber}} </td>
+      <td> {{.Levels}} </td>
+    </tr>
+    {{end}}
+  </table>
+
+</body>
+
+</html>
