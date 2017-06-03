@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="utf-8" />
+  <title> Template 12: funcMapping </title>
+</head>
+
+<body>
+  <p>
+    This is the list of cows in the farm:
+  </p>
+
+  <ul>
+    {{range .Cows}}
+      <li> {{upperCase .Name}} </li>
+    {{end}}
+  </ul>
+
+  <p>
+    This is the list of rabbits codes in the farm:
+    <ul>
+      {{range .Rabbits}}
+        <li> {{initials .Name}} </li>
+      {{end}}
+    </ul>
+  </p>
+
+</body>
+</html>
