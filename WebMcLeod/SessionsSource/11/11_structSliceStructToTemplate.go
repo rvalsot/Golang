@@ -38,7 +38,7 @@ func main() {
 	GDL := House{"GDL", 75, 3}
 
 	LEO := ApartmentBuilding{"LEO", 8, 4}
-	PVA := ApartmentBuilding{"PVA", 6, 3}
+	PVA := ApartmentBuilding{"PVA", 12, 4}
 
 	houses := []House{SJL, GDL}
 	apartmentBuildings := []ApartmentBuilding{LEO, PVA}
@@ -53,18 +53,16 @@ func main() {
 		log.Fatalln(err)
 	}
 
-	/*
-		newFilename := "toIndex.html"
-		newFile, err := os.Create(newFilename)
-		if err != nil {
-			log.Println("File could not be created: \n", err)
-		}
-		defer newFile.Close()
+	newFilename := "toIndex.html"
+	newFile, err := os.Create(newFilename)
+	if err != nil {
+		log.Println("File could not be created: \n", err)
+	}
+	defer newFile.Close()
 
-		err = temp.Execute(newFile, nil)
-		if err != nil {
-			log.Fatalln(err)
-		}.
-	*/
+	err = temp.Execute(newFile, dataMap)
+	if err != nil {
+		log.Fatalln(err)
+	}
 
 }
