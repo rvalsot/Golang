@@ -2,6 +2,8 @@
 
 This folder has my practices with McLeod's Web programming with Go course available at Udemy.
 
+Some of the samples are based on classes and modified by me to push the practice a little more.
+
 ## Templates
 
 Objectives:
