@@ -18,3 +18,5 @@ __Templates__: they allow us to create one document and merge data to it.
 ## Notes:
 
 * When serving files in a RESTful way, their file-extension does not matter.
+
+## Servers
