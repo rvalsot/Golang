@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>List of Texas Hotels</title>
+</head>
+
+<body>
+
+  <table>
+    <tr>
+      <th> Name </th> <th> Street </th> City <th> Zip </th> <th> Rooms </th> <th> Cost </th>
+    </tr>
+    {{range .}}
+      <tr>
+        <td> {{.Name}} </td> <td> {{.Address}} </td> <td> {{.City}} </td> <td> {{.Zip}} </td> <td> {{.Rooms}} </td> <td> {{.Price}} </td>
+      </tr>
+    {{end}}
+  </table>
+
+</body>
+
+</html>

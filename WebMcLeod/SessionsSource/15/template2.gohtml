@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="utf-8" />
+  <title> Courses for this year </title>
+</head>
+
+<body>
+
+</body>
+  {{.Primavera.Term}} <br />
+  {{range .Primavera.Courses}}
+  <p> - {{.Number}} - {{.Name}} - {{.Units}} </p>
+  {{end}}
+
+  {{.Verano.Term}} <br />
+  {{range .Verano.Courses}}
+  <p> - {{.Number}} - {{.Name}} - {{.Units}} </p>
+  {{end}}
+
+  {{.Otono.Term}} <br />
+  {{range .Otono.Courses}}
+  <p> - {{.Number}} - {{.Name}} - {{.Units}} </p>
+  {{end}}
+
+</html>
