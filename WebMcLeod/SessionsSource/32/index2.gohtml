@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="utf-8" />
+  <title>Input type Submissions</title>
+</head>
+
+<body>
+  <header>
+    {{if .Method}} <p> The request method: {{.Method}} </p> {{end}}
+    {{if .Submissions}} <p> Variable names and values  </p>
+      {{range $key, $value := .Submissions}}
+        <p>{{$key}}</p>
+        <ul>
+          {{range $value}}
+          <li>{{.}}</li>
+          {{end}}
+        </ul>
+      {{end}}
+    {{end}}
+  </header>
+
+  <form action="/" method="post">
+    <input type="text" name="fistName" placeholder="first name" autofocus autocomplete="off"/>
+    <input type="submit" name="submit-btn" value="Da button"/>
+  </form>
+</body>
+
+</html>
