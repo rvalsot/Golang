@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="utf-8" />
+  <title>Index page</title>
+</head>
+
+<body>
+  {{if .First}}
+   <table>
+     <th>
+       <td> Data </td> <td> Value </td>
+     </th>
+     <tr>
+       <td> User Name </td> <td> {{.UserName}} </td>
+     </tr>
+     <tr>
+       <td> First Name</td> <td> {{.First}} </td>
+     </tr>
+     <tr>
+       <td> Last Name </td> <td> {{.Last}} </td>
+     </tr>
+     <tr>
+       <td> Role </td> <td> {{.Role}} </td>
+     </tr>
+     <tr>
+       <td> Hashed Password </td> <td> {{.Password}}</td>
+     </tr>
+   </table>
+  {{end}}
+
+  <footer>
+    <a href="/bar">   Bar </a>
+    <a href="/login"> Login</a>
+    <a href="/logout">Logout</a>
+    <a href="/singup">Sing up</a>
+  </footer>
+
+</body>
+
+</html>

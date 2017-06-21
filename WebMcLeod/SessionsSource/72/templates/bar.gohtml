@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="utf-8" />
+  <title>Bar!</title>
+</head>
+
+<body>
+  <header>
+    <div>
+      <a href="/logout">Logout</a>
+    </div>
+  </header>
+  <h1>Welcome to the bar!</h1>
+  {{if .First}}
+    Hi {{.First}}, what would you like to drink?
+  {{end}}
+  <br />
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="utf-8" />
+  <title>Login</title>
+</head>
+
+<body>
+  <header>
+    <div>
+      <a href="/logut">Logout</a>
+    </div>
+  </header>
+
+  {{if .First}}
+    UserName: {{.UserName}}
+    <br />
+
+    First name: {{.First}}
+    <br />
+
+    Last name: {{.Last}}
+    <br />
+
+    Password (encrypted): {{.Password}}
+    <br / />
+  {{else}}
+    <a href="/singup"> Sing up</a>
+    <a href="/login"> Sing in</a>
+  {{end}}
+  <a href="/bar">Go to the bar here!</a>
+</body>
+
+</html>
