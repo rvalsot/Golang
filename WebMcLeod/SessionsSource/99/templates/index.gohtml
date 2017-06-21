@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title> Index </title>
+</head>
+
+<body>
+  <h1> Cookie values:</h1>
+  {{range .}}
+    {{.}}
+  {{end}}
+
+  <form method="post">
+    <input type="file" name="new_file" />
+    <br />
+    <input type="submit"/>
+    <br />
+  </form>
+</body>
+</html>
