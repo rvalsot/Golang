@@ -1,0 +1,5 @@
+CREATE DATABASE bookstore;
+
+CREATE USER agent WITH PASSWORD 'password';
+
+GRANT ALL PRIVILEGES ON DATABASE bookstore to agent;
